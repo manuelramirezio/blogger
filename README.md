@@ -1,2 +1,2 @@
-#node skeleton
-node.js angular.js
+#blogger
+website for economic and business news
