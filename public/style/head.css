@@ -1,0 +1,61 @@
+body {
+  background-color: gray;
+}
+canvas {
+  position: absolute;
+  left: 20%;
+  top: 40%;
+  width: 780px;
+  height: 90px;
+}
+.draggable {
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+  cursor: hand;
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+}
+.resizable {
+  width: 50%;
+  border: 3px dotted blue;
+  width: 150px;
+  height: 150px;
+}
+.resizable img {
+  width: 100%;
+}
+.ui-resizable-handle {
+  background: blue;
+  width: 15px;
+  height: 15px;
+  z-index: 2;
+  border-radius: 7px;
+}
+.ui-resizable-se {
+  right: -5px;
+  bottom: -5px;
+}
+.ui-rotatable-handle {
+  background: #f5dc58;
+  border: 1px solid #FFF;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  cursor: pointer;
+  height: 10px;
+  color: red
+    left: 50%;
+  margin: 0 0 0 -5px;
+  position: absolute;
+  top: -5px;
+  width: 10px;
+}
+.ui-rotatable-handle.ui-draggable-dragging {
+  visibility: hidden;
+}

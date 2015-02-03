@@ -1,0 +1,22 @@
+{
+  "name": "node_skeleton",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "jquery":"latest",
+    "fontawesome":"latest",
+    "bootstrap": "~3.2.0",
+    "modernizr":"latest",
+    "jquery.validation":"latest",
+    "retina.js":"latest",
+    "fitvids":"latest",
+    "echojs":"latest",
+    "jquery-easing-original":"latest",
+    "jquery-cycle2":"latest",
+    "jquery-ui":"latest"
+  }
+}
