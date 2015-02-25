@@ -1,8 +1,13 @@
-var gulp 		    = require('gulp'),
+var gulp        = require('gulp'),
     browserSync = require('browser-sync'),
-	  reload		  = browserSync.reload,
-    nodemon 	  = require('gulp-nodemon'),
-    less 		    = require('gulp-less')
+    reload      = browserSync.reload,
+    nodemon     = require('gulp-nodemon'),
+    less        = require('gulp-less'),
+    jshint      = require('gulp-jshint'),
+    uglify      = require('gulp-uglify'),
+    concat      = require('gulp-concat'),
+    imagemin    = require('gulp-imagemin'),
+    cssmin      = require('gulp-cssmin');
 
 /**
  * Gulp Tasks
@@ -44,7 +49,7 @@ gulp.task('js', function () {
       .pipe(jshint.reporter('default'))
       .pipe(uglify())
       .pipe(concat('app.js'))
-      .pipe(gulp.dest('public/build/src'));
+      .pipe(gulp.dest('public/dist/src'));
 });
 
 //less converter
@@ -52,24 +57,30 @@ gulp.task('less',function(){
 	return gulp.src('public/style/*.less')
         .pipe(less())
         .pipe(gulp.dest('public/style'))
-        .pipe(reload({stream:true}));
+        .pipe(reload({ stream:true }));
+});
+
+//minify css
+gulp.task('cssmin', ['less'] ,function () {
+    gulp.src('public/style/*.css')
+        .pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('public/dist/style'));
 });
 
 //Image compressor
 gulp.task('imagemin',function(){
    return gulp.src('public/img/**/*.*')
-      .pipe(imagemin({
-         progressive: true
-      }))
-      .pipe(gulp.dest('public/build/img'))
+      .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+      .pipe(gulp.dest('public/dist/img'))
 });
 
 gulp.task('default', ['browser-sync'], function () {
   gulp.watch(['public/img/**.*'], ['imagemin',reload]);  
-  gulp.watch(['public/src/**/*.*'], ['js',reload]);
-  gulp.watch(['public/style/*.*'], ['less',reload]);
+  gulp.watch(['public/js/**/*.*'], ['js',reload]);
+  gulp.watch(['public/style/*.*'], ['cssmin',reload]);
   gulp.watch(['public/vendor/*.*'], [reload]);
   gulp.watch(['public/views/*.*'], [reload]);
   gulp.watch(['server/**/*.*'], [reload]);
-  gulp.watch(['public/main.html'],[reload])
+  gulp.watch(['public/index.html'],[reload])
 });

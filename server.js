@@ -5,10 +5,10 @@ var express	  =require('express'),
 
 app=express();
 
-app.set('PORT',(process.env.PORT||config.PORT))
+app.set('PORT' , (process.env.PORT || config.PORT))
 	.use(express.static('./public'))
 	.use(bodyParser.json())
-	.use(function(req,res){
+	.use(function(req , res){
 		res.sendfile('public/main.html')
 	})
 	.use(router)
