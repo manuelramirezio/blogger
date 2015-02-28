@@ -1,13 +1,17 @@
 var gulp        = require('gulp'),
     browserSync = require('browser-sync'),
-    reload      = browserSync.reload,
     nodemon     = require('gulp-nodemon'),
     less        = require('gulp-less'),
     jshint      = require('gulp-jshint'),
     uglify      = require('gulp-uglify'),
     concat      = require('gulp-concat'),
     imagemin    = require('gulp-imagemin'),
-    cssmin      = require('gulp-cssmin');
+    cssmin      = require('gulp-cssmin'),
+    rename      = require('gulp-rename'),
+    ngmin       = require('gulp-ngmin'),
+    ngAnnotate  = require('gulp-ng-annotate'),
+    sourcemaps  = require('gulp-sourcemaps'),
+    reload      = browserSync.reload
 
 /**
  * Gulp Tasks
@@ -42,14 +46,26 @@ gulp.task('nodemon', function (cb) {
     }, 1000);
   });
 });
+
 //for javscript files
-gulp.task('js', function () {
-   return gulp.src('public/src/**/*.js')
-      .pipe(jshint())
-      .pipe(jshint.reporter('default'))
-      .pipe(uglify())
-      .pipe(concat('app.js'))
-      .pipe(gulp.dest('public/dist/src'));
+// gulp.task('jquery', function () {
+//    return gulp.src('public/assets/js/custom/*.js')
+//       .pipe(jshint())
+//       .pipe(jshint.reporter('default'))
+//       .pipe(concat('customApp.min.js'))
+//       .pipe(uglify())
+//       .pipe(gulp.dest('public/dist/src'));
+// });
+
+// angular minify  
+gulp.task('angular', function () {
+    return gulp.src('public/js/**/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(concat('app.min.js'))
+        .pipe(ngAnnotate())
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('public/dist/src'))
 });
 
 //less converter
@@ -71,16 +87,15 @@ gulp.task('cssmin', ['less'] ,function () {
 //Image compressor
 gulp.task('imagemin',function(){
    return gulp.src('public/img/**/*.*')
-      .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+      .pipe(imagemin({  progressive: true}))
       .pipe(gulp.dest('public/dist/img'))
 });
 
 gulp.task('default', ['browser-sync'], function () {
-  gulp.watch(['public/img/**.*'], ['imagemin',reload]);  
-  gulp.watch(['public/js/**/*.*'], ['js',reload]);
-  gulp.watch(['public/style/*.*'], ['cssmin',reload]);
-  gulp.watch(['public/vendor/*.*'], [reload]);
-  gulp.watch(['public/views/*.*'], [reload]);
-  gulp.watch(['server/**/*.*'], [reload]);
-  gulp.watch(['public/index.html'],[reload])
+  gulp.watch(['public/img/**.*'], ['imagemin',reload]);
+  gulp.watch(['public/js/**/**.*'] , ['angular' , reload]);
+  gulp.watch(['public/style/**.*'] , ['cssmin' , reload]);
+  gulp.watch(['public/views/**.*'] , ['less' , reload]);
+  gulp.watch(['server/**/**.*'] , ['nodemon' , reload]);
+  gulp.watch(['public/*.html'] , ['less' , reload]);
 });

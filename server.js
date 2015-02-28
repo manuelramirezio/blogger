@@ -1,18 +1,28 @@
-var express	  =require('express'),
-	router	  =require('./api')
-	config	  =require('./config'),
-	bodyParser=require('body-parser')
 
-app=express();
 
-app.set('PORT' , (process.env.PORT || config.PORT))
-	.use(express.static('./public'))
-	.use(bodyParser.json())
-	.use(function(req , res){
-		res.sendfile('public/main.html')
-	})
-	.use(router)
 
-app.listen(app.get('PORT'),function(){
-	console.log('app is running on port: '+app.get('PORT'));
+var express	       = require('express'),
+	config	       = require('./config/config'),
+	mongoose       = require('mongoose')
+
+
+// db connection
+var db = mongoose.connect(config.db.uri, config.db.options, function(err) {
+	if (err) {
+		console.error('Could not connect to MongoDB!');
+	}
 });
+mongoose.connection.on('error', function(err) {
+	console.error('MongoDB connection error: ' + err);
+	process.exit(-1);
+});
+
+
+var app = require('./config/express')(db);
+
+
+app.listen(app.get('PORT') , function() {
+	console.log('app is running on port: ' + app.get('PORT'));
+});
+
+exports = module.exports = app;
