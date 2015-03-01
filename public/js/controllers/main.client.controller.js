@@ -1,7 +1,9 @@
 angular.module('MyApp')
 	.controller('mainCtrl' , function($scope) {
+
+		//get main post
 		var date   = new Date(),
-			day    = date.getDay(),
+			day    = date.getDay() + 1,
 			month  = date.getMonth() + 1,
 			year   = date.getFullYear();
 
@@ -16,4 +18,18 @@ angular.module('MyApp')
 			body     : 'gamarjobaT es aris Cemi pirveli blogis teqsti rame unda movifiqro ro didi moculobiTi gamoCndes xo azrze xarT ara',
 			author   : 'laSa kaxiZe'
 		}
+		//end of main post
+
+		//get hot news
+
+
+		//end of hot-news
+
+		//get actual news
+
+
+		//end of actual news
+
+
+
 	});

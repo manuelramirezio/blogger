@@ -40,12 +40,12 @@
 }
 .navbar-default .container .navbar-collapse ul li a {
   margin: 10px;
-  color: #FFFFFF !important;
+  color: #FFFFFF;
   font-family: Georgian !important;
   font-size: 17px;
   cursor: pointer;
 }
-.navbar-default .container .navbar-collapse ul li:hover {
+.navbar-default .container .navbar-collapse ul li a:hover {
   color: #64cec0 !important;
 }
 .navbar-default .container .navbar-collapse ul li.search-li {
@@ -53,7 +53,7 @@
 }
 .navbar-default .container .navbar-collapse .search-nav span {
   background: #47a9a2 !important;
-  color: white;
+  color: #FFFFFF;
   border: 1px solid #ffffff;
 }
 .navbar-default .container .navbar-collapse .search-nav input {
@@ -75,34 +75,48 @@
 }
 .placeholder {
   font-family: Georgian;
-  font-size: 16px;
+  font-size: 15px;
   color: #808080;
 }
 ::-webkit-input-placeholder {
   font-family: Georgian;
-  font-size: 16px;
+  font-size: 15px;
   color: #808080;
 }
 :-moz-placeholder {
   /* Firefox 18- */
   font-family: Georgian;
-  font-size: 16px;
+  font-size: 15px;
   color: #808080;
 }
 ::-moz-placeholder {
   /* Firefox 19+ */
   font-family: Georgian;
-  font-size: 16px;
+  font-size: 15px;
   color: #808080;
 }
 :-ms-input-placeholder {
   font-family: Georgian;
-  font-size: 16px;
+  font-size: 15px;
   color: #808080;
 }
 .auto-height {
   height: auto !important;
 }
-.active-nav {
-  background: #25aae1;
+.active {
+  color: #ff8c00 !important;
+}
+.searching,
+.searching-add {
+  width: 150px!important;
+}
+.searching-remove {
+  width: 80px!important;
+}
+.searching-add,
+.searching-remove {
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
 }

@@ -19,6 +19,13 @@ body {
 	h1,h2,h3,h4,h5,h6 {
 		font-family: acadnusx !important;
 	}
+	button {
+		font-family: acadnusx !important;
+		font-weight: bold !important;
+	}
+	hr {
+		border: 1px solid #BABABA;
+	}
 
 }
 
@@ -31,11 +38,31 @@ body {
 }
 
 .news-content {
-	height: 1000px;
 	padding: 5px;
+	.main-post {
+		img {
+			height: auto;
+			width: 100%;
+		}
+	}
+	.hot-themes {
+		border-left: 5px solid @hotColor !important;
+		font-size: 22px;
+		color: @hotColor !important;
+		font-weight: bold;
+	}
+
+	.actual-themes {
+		border-left: 5px solid @actualColor !important;
+		font-size: 22px;
+		color: @actualColor !important;
+		font-weight: bold;
+	}
 }
 
 .adds-content {
-	background-color: lightgray;
-	height: 1000px;
+	background-color: #444444;
 }
+
+@hotColor 	 : #FF0000;
+@actualColor : #FF9900;

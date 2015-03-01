@@ -1,0 +1,31 @@
+<section>
+	<div class="main-post">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>{{ blog.title }}</h1>
+				<h5>
+					<span class="pull-left">kategoria: {{ blog.category }}</span>
+					<span class="pull-right">gamoqveynda: {{ blog.created }}</span>
+				</h5>
+			</div>
+		</div><br/>
+		<div class="row">
+			<div class="col-md-6">
+				<h3>{{ blog.body }}</h3>
+			</div>
+			<div class="col-md-6">
+				<h3><img src="/img/slider/2.jpg" alt="" class="img-responsive img-rounded"></h3>
+			</div>
+
+		</div><br/>
+		<div class="row">
+			<div class="col-md-12">
+				<span>avtori: {{ blog.author }}</span>
+				<button class="btn btn-primary pull-right">kiTxvis gagrZeleba
+					<span class="glyphicon glyphicon-share-alt"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<hr>
+</section>

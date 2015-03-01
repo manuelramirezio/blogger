@@ -14,6 +14,13 @@ var express        = require('express'),
 	swig 		   = require('swig'),
 	router	       = exports.Router
 
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', 'http://localhost');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+    next();
+}
 
 module.exports = function(db) {
 	// Initialize express app
@@ -39,6 +46,7 @@ module.exports = function(db) {
 		.use(methodOverride())
 		// .use(stylus.middleware('./public'))
 		.use(express.static('./public'))
+		.use(allowCrossDomain)
 	
 
 	// Environment dependent middleware

@@ -20,6 +20,13 @@ body h5,
 body h6 {
   font-family: acadnusx !important;
 }
+body button {
+  font-family: acadnusx !important;
+  font-weight: bold !important;
+}
+body hr {
+  border: 1px solid #BABABA;
+}
 .add728X90 {
   background: white;
   margin: 15px;
@@ -28,10 +35,24 @@ body h6 {
   background: inherit;
 }
 .news-content {
-  height: 1000px;
   padding: 5px;
 }
+.news-content .main-post img {
+  height: auto;
+  width: 100%;
+}
+.news-content .hot-themes {
+  border-left: 5px solid #ff0000 !important;
+  font-size: 22px;
+  color: #ff0000 !important;
+  font-weight: bold;
+}
+.news-content .actual-themes {
+  border-left: 5px solid #ff9900 !important;
+  font-size: 22px;
+  color: #ff9900 !important;
+  font-weight: bold;
+}
 .adds-content {
-  background-color: lightgray;
-  height: 1000px;
+  background-color: #444444;
 }

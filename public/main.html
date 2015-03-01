@@ -35,6 +35,7 @@
 		<script type="text/javascript" src="assets/plugins/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
 		<script type="text/javascript" src="assets/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="assets/plugins/rs-plugin/css/settings.css" media="screen" /> 
+
 		<!-- end of bootstap themes -->
 
 		<!-- custom css  -->
@@ -56,23 +57,14 @@
 			<div class="container">
 				<div class="row">
 					<div class="add728X90"></div>
-				</div>				
+				</div>
 			</div>
 			<!-- end of 728X90 -->
 
-			<div class="container">
-				<div class="col-md-8 news-content" ng-view>
-					
-				</div>
-				
-				<!-- ADDS -->
-				<div class="col-md-4 adds-content">
-					<h1>gamarjoba</h1>
-				</div>
-				<!-- end of ADDS -->
-				
+			<div class="container news-content" ng-view>
 			</div>
 			<div class="container-fluid container-footer">
+				<my-footer></my-footer>
 			</div>
 		</div>
 
@@ -100,23 +92,27 @@
 
 		<!--angular custom files-->
 		<script src="js/app.js"></script>
+		<!--header-->
 		<script src="js/controllers/header.client.controller.js"></script>
 		<script src="js/directives/header.client.directive.js"></script>
+		<!--end of header-->
+
+		<!--main-->
 		<script src="js/controllers/main.client.controller.js"></script>
 		<script src="js/views/main.client.view.html"></script>
-		<!--<script src="js/controllers/mainCtrl.js"></script>
-		<script src="js/controllers/mainViewCtrl.js"></script>
-		<script src="js/controllers/footerCtrl.js"></script>
-		<script src="js/controllers/productViewCtrl.js"></script>
-		<script src="js/filters/filter.js"></script>
-		<script src="js/directives/mySearch.js"></script>
-		<script src="js/directives/myCarousel.js"></script>
-		<script src="js/directives/myFooter.js"></script>
-		<script src="js/directives/myProduct.js"></script>
-		<script src="js/directives/mySlider.js"></script>-->
+		<script src="js/directives/main-post.client.directive.js"></script>
+		<script src="js/views/main-post.client.view.html"></script>
+		<script src="js/directives/hot-post.client.directive.js"></script>
+		<script src="js/views/hot-post.client.view.html"></script>
+		<!--end of main-->
+
+		<!--footer -->
+		<script src="js/controllers/footer.client.controller.js"></script>
+		<script src="js/directives/footer.client.directive.js"></script>
+		<script src="js/views/footer.client.view.html"></script>
+		<!-- end of footer -->
 
 		<!-- end of angular custom files -->
-
 
 	</body>
 </html>
