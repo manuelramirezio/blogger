@@ -64,5 +64,36 @@ body {
 	background-color: #444444;
 }
 
+
+.category-view {
+	.jumbotron {
+		div {
+			width: 350px;
+			display: block-inline;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+	.add-banner {
+	}
+}
+.category-navigation {
+	i {
+		font-size: 15px;
+		padding-left: 5px;
+		padding-right: 5px; 
+	}
+	span {
+		font-size: 15px !important;
+		color: @hoverColor !important;
+		&:hover {
+			color:@actualColor !important;
+		};
+	}
+}
+
 @hotColor 	 : #FF0000;
 @actualColor : #FF9900;
+@hoverColor  : #0b9c8f;

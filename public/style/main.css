@@ -56,3 +56,23 @@ body hr {
 .adds-content {
   background-color: #444444;
 }
+.category-view .jumbotron div {
+  width: 350px;
+  display: block-inline;
+}
+.category-view .jumbotron div img {
+  width: 100%;
+  height: auto;
+}
+.category-navigation i {
+  font-size: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.category-navigation span {
+  font-size: 15px !important;
+  color: #0b9c8f !important;
+}
+.category-navigation span:hover {
+  color: #ff9900 !important;
+}

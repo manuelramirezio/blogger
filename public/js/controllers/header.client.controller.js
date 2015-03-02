@@ -1,6 +1,6 @@
 angular.module('MyApp')
-	.controller('headerCtrl' , function($scope) {
-		$scope.active = 0;
+	.controller('headerCtrl' , function($scope , activeNav) {
+		$scope.active = activeNav.active;
 		$scope.navs = 
 		[
 			{	name : 'mTavari', 	    href : '/'	},
@@ -10,7 +10,10 @@ angular.module('MyApp')
 		]
 		$scope.activate = function(ind) {
 			$scope.active = ind;
+			activeNav.active = ind;
 		}
-
+		$scope.$watch(function(){ return activeNav.active },function(newVal) {
+			$scope.active = newVal;
+		});
 		$scope.search = '' ;
 	});

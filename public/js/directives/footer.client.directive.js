@@ -3,6 +3,6 @@ angular.module('MyApp')
 		return {
 			restrict	: 'E',
 			replace		: true,
-			teplateUrl	: '/views/footer.client.view.html'
+			templateUrl	: '/views/footer.client.view.html'
 		}
 	});

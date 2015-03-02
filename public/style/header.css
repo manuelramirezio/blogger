@@ -46,13 +46,13 @@
   cursor: pointer;
 }
 .navbar-default .container .navbar-collapse ul li a:hover {
-  color: #64cec0 !important;
+  color: #0b9c8f !important;
 }
 .navbar-default .container .navbar-collapse ul li.search-li {
   background: #000000;
 }
 .navbar-default .container .navbar-collapse .search-nav span {
-  background: #47a9a2 !important;
+  background: #0b9c8f !important;
   color: #FFFFFF;
   border: 1px solid #ffffff;
 }

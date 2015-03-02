@@ -1,7 +1,44 @@
 .container-fluid.container-footer {
   border-top: 1px solid #8a8a8a;
-  background-color: orange;
+  background-color: #000000;
   color: #FFFFFF;
-  height: 100px;
   font-family: Georgian;
+  padding: 25px !important;
+}
+.container-fluid.container-footer li a {
+  color: white;
+  font-size: 17px;
+}
+.container-fluid.container-footer li a:hover {
+  color: #0b9c8f !important;
+}
+.container-fluid.container-footer .mail-news h1,
+.container-fluid.container-footer .mail-news h2,
+.container-fluid.container-footer .mail-news h3,
+.container-fluid.container-footer .mail-news h4,
+.container-fluid.container-footer .mail-news h5,
+.container-fluid.container-footer .mail-news h6 {
+  color: #FFFFFF;
+}
+.container-fluid.container-footer .mail-news label {
+  font-size: 17px;
+}
+.container-fluid.container-footer .creator {
+  font-family: sylfaen;
+}
+.active a {
+  color: #ff8c00 !important;
+}
+#flag:after {
+  background: #f2f4f6;
+  content: "";
+  color: red;
+  position: absolute;
+  left: -132px;
+  bottom: 252px;
+  width: 0;
+  height: 0;
+  border-bottom: 55px solid #000000;
+  border-left: 722 solid rgba(18, 17, 17, 0);
+  border-right: 722px solid transparent;
 }
