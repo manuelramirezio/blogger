@@ -53,6 +53,22 @@ body hr {
   color: #ff9900 !important;
   font-weight: bold;
 }
+.news-content .search-result {
+  color: #000000 !important;
+  font-size: 15px !important;
+}
+.news-content .search-result input {
+  font-family: Georgian !important;
+}
+.reading {
+  height: 800px !important;
+}
+.reading img {
+  width: 450px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  float: left;
+}
 .adds-content {
   background-color: #444444;
 }

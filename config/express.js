@@ -12,7 +12,7 @@ var express        = require('express'),
 	path           = require('path'),
 	consolidate    = require('consolidate'),
 	swig 		   = require('swig'),
-	router	       = exports.Router
+	router	       = express.Router
 
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', 'http://localhost');
@@ -25,7 +25,6 @@ var allowCrossDomain = function(req, res, next) {
 module.exports = function(db) {
 	// Initialize express app
 	var app = express();
-
 	// Showing stack errors
 	app.set('showStackError', true);
 
@@ -72,7 +71,9 @@ module.exports = function(db) {
 	// config.getGlobbedFiles('../server/routes/**/*.js').forEach(function(routePath) {
 	// 	require(path.resolve(routePath))(app);
 	// });
-
+	app.use(function(req , res) {
+		res.sendfile('public/main.html');
+	})
 	// Assume 'not found' in the error msgs is a 404. this is somewhat silly, but valid, you can do whatever you like, set properties, use instanceof etc.
 	// app.use(function(err, req, res, next) {
 	// 	// If the error object doesn't exists
