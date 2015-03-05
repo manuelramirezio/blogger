@@ -26,6 +26,12 @@
 .container-fluid.container-footer .creator {
   font-family: sylfaen;
 }
+.container-fluid.container-footer i a {
+  color: #0b9c8f;
+}
+.container-fluid.container-footer .fa {
+  color: #0b9c8f;
+}
 .active a {
   color: #ff8c00 !important;
 }

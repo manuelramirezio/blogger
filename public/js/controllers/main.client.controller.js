@@ -1,13 +1,12 @@
 angular.module('MyApp')
 	.controller('mainCtrl' , function($scope , Post) {
-
 		var query = Post.query();
 		query.$promise.then(function(value) {
-			console.log(value[0].body,value[1].title)
+
 		},function(reason) {
 			console.log(reason)			
-		})
-		// console.log(query)
+		});
+
 		//get main post
 		var date   = new Date(),
 			day    = date.getDay() + 1,
