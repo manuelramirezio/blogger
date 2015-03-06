@@ -3,10 +3,10 @@ angular.module('MyApp')
 		$scope.active = activeNav.active;
 		$scope.navs = 
 		[
-			{	name : 'mTavari', 	    href : '/'	},
-			{	name : 'ekonomika', 	href : '/economic'	},
-			{	name : 'biznesi', 	    href : '/business'	},
-			{	name : 'sazogadoeba', 	href : '/society'	}
+			{	name : 'mTavari', 	    href : 'main'	},
+			{	name : 'ekonomika', 	href : 'economic'	},
+			{	name : 'biznesi', 	    href : 'business'	},
+			{	name : 'sazogadoeba', 	href : 'society'	}
 		]
 		$scope.activate = function(ind) {
 			$scope.active = ind;

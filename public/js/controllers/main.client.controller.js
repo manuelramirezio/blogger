@@ -1,11 +1,11 @@
 angular.module('MyApp')
 	.controller('mainCtrl' , function($scope , Post) {
-		var query = Post.query();
-		query.$promise.then(function(value) {
+		// var query = Post.query();
+		// query.$promise.then(function(value) {
 
-		},function(reason) {
-			console.log(reason)			
-		});
+		// },function(reason) {
+		// 	console.log(reason)			
+		// });
 
 		//get main post
 		var date   = new Date(),

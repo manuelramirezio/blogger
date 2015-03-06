@@ -7,5 +7,5 @@ module.exports = function(app) {
 	var main = require('../controllers/post.server.controller');
 
 	// Setting up the index router
-	app.route('/api/category').get(main.index);
+	app.route('/api/ipi').get(main.index);
 };

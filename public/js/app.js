@@ -1,18 +1,26 @@
-angular.module('MyApp' , ['ngRoute','ngResource'])
-	.config(function($routeProvider,$locationProvider){
-		$routeProvider
-			.when('/',{
-				templateUrl:'/views/main.client.view.html',
-				controller:'mainCtrl'
-			})
-			.when('/economic',{
-				templateUrl:'/views/category.client.view.html',
-				controller:'categoryCtrl'
-			})
-			.when('/business',{
-				templateUrl:'/views/reading.client.view.html',
-				controller:'categoryCtrl'
-			})
+angular.module('MyApp' , ['ui.router','ngResource'])
+	.config(function($stateProvider, $urlRouterProvider){
+		$urlRouterProvider.otherwise('/');
 
-		$locationProvider.html5Mode(true);
+		$stateProvider
+			.state('main',{
+				url 		: '/',
+				templateUrl : '/views/main.client.view.html',
+				controller  : 'mainCtrl'
+			})
+			.state('economic',{
+				url 		: '/economic',
+				templateUrl : '/views/category.client.view.html',
+				controller  : 'categoryCtrl'
+			})
+			.state('business',{
+				url 		: '/business',
+				templateUrl : '/views/reading.client.view.html',
+				controller  : 'categoryCtrl'
+			})
+			.state('society',{
+				url 		: '/society',
+				templateUrl : '/views/category.client.view.html',
+				controller  : 'categoryCtrl'
+			})
 	})

@@ -1,11 +1,13 @@
 
 
+
 var mongoose = require('mongoose'),
 	Q		 = require('q'),
 	Post     = mongoose.model('Post');
 
 
 exports.index = function(req , res) {
+	console.log('iseve aq shemovida')
 	var objects  = {},
 		deferred = Q.defer();
 
@@ -24,7 +26,8 @@ exports.index = function(req , res) {
 			return [1,2,3]
 		})
 		.then(function(actual) {
-			console.log(actual,objects)
+			console.log('aq to?')
+			// console.log(actual,objects)
 			return actual
 		})
 

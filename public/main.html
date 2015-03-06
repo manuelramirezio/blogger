@@ -61,7 +61,7 @@
 			<!-- end of 728X90 -->
 
 			<!-- view body -->
-			<div class="container news-content" ng-view>
+			<div class="container news-content" ui-view>
 			</div>
 			<!-- end of view body -->
 
@@ -93,7 +93,7 @@
 
 		<!-- angular lib files -->
 		<script src="vendor/angular/angular.min.js"></script>
-		<script src="vendor/angular-route/angular-route.min.js"></script>
+		<script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
 		<script src="vendor/angular-resource/angular-resource.min.js"></script>
 		<script src="vendor/angular-messages/angular-messages.min.js"></script>
 		<!--<script src="vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>-->
@@ -108,14 +108,15 @@
 		<!--end of header-->
 
 		<!--main-->
+		<script src="js/services/post.client.service.js"></script>
 		<script src="js/controllers/main.client.controller.js"></script>
 		<script src="views/main.client.view.html"></script>
 		<script src="js/directives/main-post.client.directive.js"></script>
 		<script src="views/main-post.client.view.html"></script>
 		<script src="js/directives/hot-post.client.directive.js"></script>
 		<script src="views/hot-post.client.view.html"></script>
-		<script src="js/services/post.client.service.js"></script>
 
+		<script src="js/services/category.client.service.js"></script>
 		<script src="js/controllers/category.client.controller.js"></script>
 		<script src="js/directives/category.client.directive.js"></script>
 		<script src="views/category.client.view.html"></script>
@@ -128,7 +129,7 @@
 		<script src="js/controllers/reading.client.controller.js"></script>
 		<script src="js/directives/reading.client.directive.js"></script>
 		<script src="views/reading.client.view.html"></script>
-
+		
 		<!--end of main-->
 
 		<!--footer -->
