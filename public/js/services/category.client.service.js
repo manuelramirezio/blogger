@@ -3,7 +3,7 @@
 
 angular.module('MyApp')
 	.factory('Category' , function($resource) {
-		return $resource('api/:category' , { category : '@category' } , {
+		return $resource('api/:category' , { } , {
 			'update' : { method : 'PUT' }
 		});
 	});

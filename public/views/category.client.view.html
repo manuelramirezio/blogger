@@ -9,14 +9,14 @@
 				<i class="fa fa-angle-double-right"></i>
 			</a>
 			<a href="">
-				<span>ekonomika</span>
+				<span>{{ categories[active] | categoryFilter }}</span>
 			</a>
 		</div>
 	</div><br>
 	<div class="row category-view">
 		<!-- category posts goes here -->
 		<div class="col-md-8">
-			<cat-post ng-repeat="a in posts"></cat-post>
+			<cat-post ng-repeat="post in posts" ng-click="console.log('va')"></cat-post>
 		</div>
 		<!-- end of category posts -->
 

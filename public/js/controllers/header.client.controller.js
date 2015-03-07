@@ -9,7 +9,7 @@ angular.module('MyApp')
 			{	name : 'sazogadoeba', 	href : 'society'	}
 		]
 		$scope.activate = function(ind) {
-			$scope.active = ind;
+			$scope.active 	 = ind;
 			activeNav.active = ind;
 		}
 		$scope.$watch(function(){ return activeNav.active },function(newVal) {
