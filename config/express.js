@@ -67,6 +67,7 @@ module.exports = function(db) {
 	// include routes
 	require('../server/routes/post.server.route')(app);
 	require('../server/routes/category.server.route')(app);
+	require('../server/routes/reading.server.route')(app);
 	
 	// include routing files
 	// config.getGlobbedFiles('../server/routes/**/*.js').forEach(function(routePath) {

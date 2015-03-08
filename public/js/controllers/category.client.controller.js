@@ -1,17 +1,18 @@
 angular.module('MyApp')
-	.controller('categoryCtrl' , function($scope , activeNav , Category) {
+	.controller('categoryCtrl' , function($scope , activeNav , Category , $localStorage) {
+
 		// change nav color
-		$scope.active = activeNav.active;
+		$scope.active 	  = 
+			activeNav.getStorage() == undefined ? activeNav.active : activeNav.getStorage();
+
+		$scope.categories = activeNav.categories.all;
+
 		$scope.activate = function(ind) {
 			activeNav.active = ind;
 			$scope.active 	 = ind;
+			console.log(ind)
+			activeNav.setStorage(ind);
 		}
-		$scope.categories = [
-			'main',
-			'economic',
-			'business',
-			'society'
-		];
 		
 		// get posts of this category
 
@@ -25,5 +26,10 @@ angular.module('MyApp')
 			},function(error) {
 				console.log(error)
 			});
+
+		// go to post reading state
+		$scope.readPost = function(post) {
+			console.log(post._id)
+		}
 		
 	});

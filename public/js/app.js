@@ -1,4 +1,4 @@
-angular.module('MyApp' , ['ui.router','ngResource'])
+angular.module('MyApp' , ['ui.router','ngResource','ngStorage'])
 	.config(function($stateProvider, $urlRouterProvider, $locationProvider ){
 		$urlRouterProvider.otherwise('/');
 		$locationProvider.html5Mode(true);
