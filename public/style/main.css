@@ -30,6 +30,9 @@ body button {
 body hr {
   border: 1px solid #BABABA;
 }
+body .pagination-lg .active a {
+  color: #FFFFFF !important;
+}
 .add728X90 {
   background: white;
   margin: 15px;

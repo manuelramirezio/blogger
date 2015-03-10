@@ -35,10 +35,10 @@
 					<a href="/" ng-click="activate(0)">
 						<span>mTavari</span>
 					</a>
-					<a href="/economic">
+					<a href="">
 						<i class="fa fa-angle-double-right"></i>
 					</a>
-					<a href="{{ '/' + categories[active] }}">
+					<a ui-sref="category({ category : categories[active] })">
 						<span>{{ categories[active] | categoryFilter }}</span>
 					</a>
 				</div>

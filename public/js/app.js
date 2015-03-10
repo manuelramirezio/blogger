@@ -1,6 +1,6 @@
-angular.module('MyApp' , ['ui.router','ngResource','ngStorage'])
+angular.module('MyApp' , ['ui.router','ngResource','ngStorage','ui.bootstrap'])
 	.config(function($stateProvider, $urlRouterProvider, $locationProvider ){
-		$urlRouterProvider.otherwise('/');
+		
 		$locationProvider.html5Mode(true);
 
 		$stateProvider
@@ -9,24 +9,16 @@ angular.module('MyApp' , ['ui.router','ngResource','ngStorage'])
 				templateUrl : '/views/main.client.view.html',
 				controller  : 'mainCtrl'
 			})
-			.state('economic',{
-				url 		: '/economic',
+			.state('category',{
+				url 		: '/:category?page',
 				templateUrl : '/views/category.client.view.html',
-				controller  : 'categoryCtrl'
-			})
-			.state('business',{
-				url 		: '/business',
-				templateUrl : '/views/category.client.view.html',
-				controller  : 'categoryCtrl'
-			})
-			.state('society',{
-				url 		: '/society',
-				templateUrl : '/views/category.client.view.html',
-				controller  : 'categoryCtrl'
+				controller  : 'categoryCtrl',
 			})
 			.state('reading',{
-				url 		: '/reading/:id',
+				url 		: '/:category/:id',
 				templateUrl : '/views/reading.client.view.html',
 				controller	: 'readingCtrl'
 			})
+
+		$urlRouterProvider.otherwise('/');
 	})

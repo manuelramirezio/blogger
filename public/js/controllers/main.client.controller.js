@@ -6,7 +6,7 @@ angular.module('MyApp')
 		// },function(reason) {
 		// 	console.log(reason)			
 		// });
-
+		
 		//get main post
 		var date   = new Date(),
 			day    = date.getDay() + 1,
@@ -35,7 +35,5 @@ angular.module('MyApp')
 
 
 		//end of actual news
-
-
 
 	});

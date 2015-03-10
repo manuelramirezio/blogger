@@ -1,18 +1,23 @@
 angular.module('MyApp')
-	.controller('readingCtrl' , function($scope , $stateParams , $localStorage , Reading , activeNav) {
+	.controller('readingCtrl' , function($scope , $stateParams , Reading , activeNav) {
 		
-		var storage = $localStorage.active;
-		$scope.active 	  = 
-			storage == undefined ? activeNav.active : storage;
+		var category = $stateParams.category;
+
+		var query = Reading.get({ category : category , id : $stateParams.id });
+		
+		$scope.activate = function(ind) {
+			$scope.active 	 = ind;
+			activeNav.active = ind;
+		}
 
 		$scope.categories = activeNav.categories.all;
-
-		var query = Reading.get({ id : $stateParams.id });
+		$scope.active 	  = $scope.categories.indexOf($stateParams.category);
+		activeNav.active  = $scope.active;
 
 		query.$promise
-			 .then(function(value){
-			 	$scope.post = value;
-			 }, function(err) {
-			 	console.log(err);
-			 });
-	});
+			.then(function(value){
+				$scope.post = value;
+			}, function(err) {
+				console.log(err);
+			});
+	});	

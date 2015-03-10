@@ -6,14 +6,13 @@ var mongoose = require('mongoose'),
 
 
 exports.get = function(req , res) {
-	console.log('shemovida')
+	
 	var id  = req.params.id;
 
 	Post.findOne({ _id : id }).exec(function(err,data) {
 		if(err) {
 			res.status(500);
 		}
-		console.log(data);
 		res.jsonp(data);
 	});
 }

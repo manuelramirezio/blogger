@@ -6,13 +6,13 @@
 					<a ui-sref="main">mTavari</a>
 				</li>
 				<li ng-click="activate(1)" ng-class='{ "active" : 1 == active }'>
-					<a ui-sref="economic">ekonomika</a>
+					<a ui-sref="category({ category : 'economic' , page : null })">ekonomika</a>
 				</li>
 				<li ng-click="activate(2)" ng-class='{ "active" : 2 == active }'>
-					<a ui-sref="business">biznesi</a>
+					<a ui-sref="category({ category : 'business' , page : null })">biznesi</a>
 				</li>
 				<li ng-click="activate(3)" ng-class='{ "active" : 3 == active }'>
-					<a ui-sref="society">sazogadoeba</a>
+					<a ui-sref="category({ category : 'society' , page : null })">sazogadoeba</a>
 				</li>
 				<li>
 					<a>reklama</a>

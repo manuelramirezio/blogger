@@ -7,21 +7,18 @@
     "test": "node server.js"
   },
   "dependencies": {
-    "async": "*",
     "body-parser": "*",
     "consolidate": "^0.11.0",
     "cookie-parser": "*",
     "express": "*",
     "express-session": "^1.10.3",
     "glop": "^0.3.1",
-    "gulp-rename": "^1.2.0",
-    "jade": "*",
     "lodash": "^3.3.1",
     "method-override": "*",
     "mongoose": "*",
     "morgan": "^1.5.1",
-    "stylus": "*",
-    "swig": "^1.4.2"
+    "swig": "^1.4.2",
+    "q":"*"
   },
   "repository": {
     "type": "git",
@@ -39,6 +36,7 @@
     "angular-ui-router": "^0.2.13",
     "browser-sync": "^1.7.3",
     "gulp": "^3.8.10",
+    "gulp-rename": "^1.2.0",
     "gulp-concat": "^2.4.2",
     "gulp-cssmin": "^0.1.6",
     "gulp-imagemin": "^2.2.1",

@@ -1,35 +1,33 @@
 angular.module('MyApp')
-	.controller('categoryCtrl' , function($scope , activeNav , Category , $localStorage) {
+	.controller('categoryCtrl' , function($scope , $stateParams , activeNav , Category) {
 
-		// change nav color
-		$scope.active 	  = 
-			activeNav.getStorage() == undefined ? activeNav.active : activeNav.getStorage();
-
-		$scope.categories = activeNav.categories.all;
 
 		$scope.activate = function(ind) {
-			activeNav.active = ind;
 			$scope.active 	 = ind;
-			console.log(ind)
-			activeNav.setStorage(ind);
+			activeNav.active = ind;
 		}
 		
 		// get posts of this category
 
-		var category = $scope.categories[activeNav.active];
+		$scope.category  = $stateParams.category;
+		$scope.page 	 = $stateParams.page;
+		activeNav.active = activeNav.categories.all.indexOf($scope.category);
 
-		var query = Category.query({ category : category });
+		var query = Category.query({ category : $scope.category , page : $scope.page});
 
 		query.$promise
 			.then(function(value) {
+				var object   = value.pop();
+				$scope.totalItems  = object.count*100;
+				$scope.currentPage = $scope.page;
 				$scope.posts = value;
 			},function(error) {
 				console.log(error)
 			});
 
 		// go to post reading state
-		$scope.readPost = function(post) {
-			console.log(post._id)
+		$scope.paginate = function(currentPage) {
+			console.log()
 		}
 		
 	});
