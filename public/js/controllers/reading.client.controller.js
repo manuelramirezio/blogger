@@ -1,5 +1,5 @@
 angular.module('MyApp')
-	.controller('readingCtrl' , function($scope , $stateParams , Reading , activeNav) {
+	.controller('readingCtrl' , function($scope , $stateParams , $location , Reading , activeNav) {
 		
 		var category = $stateParams.category;
 
@@ -10,6 +10,7 @@ angular.module('MyApp')
 			activeNav.active = ind;
 		}
 
+		$scope.path		  = $location.absUrl();
 		$scope.categories = activeNav.categories.all;
 		$scope.active 	  = $scope.categories.indexOf($stateParams.category);
 		activeNav.active  = $scope.active;

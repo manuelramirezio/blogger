@@ -18,7 +18,7 @@ angular.module('MyApp')
 		query.$promise
 			.then(function(value) {
 				var object   = value.pop();
-				$scope.totalItems  = object.count*100;
+				$scope.totalItems  = object.count;
 				$scope.currentPage = $scope.page;
 				$scope.posts = value;
 			},function(error) {
