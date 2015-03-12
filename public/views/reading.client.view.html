@@ -4,6 +4,20 @@
 			<div id="fb-root"></div>
 			<script>
 
+				window.fbAsyncInit = function() {
+					FB.init({
+						appId      : 340273092844714, // App ID
+						status     : true,    // check login status
+						cookie     : true,    // enable cookies to allow the
+						// server to access the session
+						xfbml      : true,     // parse page for xfbml or html5
+						// social plugins like login button below
+						version        : 'v2.0',  // Specify an API version
+					});
+
+				// Put additional init code here
+				};
+
 				(function(d, s, id) {
 				  var js, fjs = d.getElementsByTagName(s)[0];
 				  if (d.getElementById(id)) return;
@@ -11,6 +25,29 @@
 				  js.src = "//connect.facebook.net/ka_GE/sdk.js#xfbml=1&appId=340273092844714&version=v2.0";
 				  fjs.parentNode.insertBefore(js, fjs);
 				}(document, 'script', 'facebook-jssdk'));
+
+
+				function postLike() {
+					FB.api(
+						'https://graph.facebook.com/me/og.likes',
+						'post',
+						{ object: objectToLike,
+						privacy: {'value': 'SELF'} },
+						function(response) {
+						if (!response) {
+						alert('Error occurred.');
+						} else if (response.error) {
+						document.getElementById('result').innerHTML =
+						'Error: ' + response.error.message;
+						} else {
+						document.getElementById('result').innerHTML =
+						'<a href=\"https://www.facebook.com/me/activity/' +
+						response.id + '\">' +
+						'Story created.  ID is ' +
+						response.id + '</a>';
+						}
+					});
+				}
 
 			</script>
 
@@ -47,7 +84,11 @@
 			</div><br>
 			<div class="row">
 				<div class="col-md-12">
-					<div class="fb-like" data-href="{{ path }}" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+					<div class="fb-like" data-href="{{ path }}" data-action="like" data-layout="button_count"></div>
+
+					<div class="fb-share-button" data-href="{{ path }}" data-layout="button_count" og:title="satauti"></div>
+
 				</div>
 			</div><br>
 			<div class="row">
