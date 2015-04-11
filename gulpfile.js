@@ -11,7 +11,7 @@ var gulp        = require('gulp'),
     ngmin       = require('gulp-ngmin'),
     ngAnnotate  = require('gulp-ng-annotate'),
     sourcemaps  = require('gulp-sourcemaps'),
-    reload      = browserSync.reload
+    reload      = browserSync.reload;
 
 /**
  * Gulp Tasks
