@@ -15,6 +15,7 @@ var gulp        = require('gulp'),
     ngAnnotate  = require('gulp-ng-annotate'),
     sourcemaps  = require('gulp-sourcemaps'),
     browserify  = require('gulp-browserify'),
+    path        = require('path'),
     reload      = browserSync.reload
 
 /**
@@ -89,15 +90,18 @@ gulp.task('angular', function () {
 gulp.task('less',function(){
 	return gulp.src('public/modules/**/*.less')
         .pipe(less())
-        .pipe(cssmin())
+        .pipe(rename(function(filepath) {
+          filepath.dirname = "";
+        }))
+        .pipe(gulp.dest('public/dist/style'))
         .pipe(reload({ stream:true }));
 });
 
 //minify css
-gulp.task('cssmin', ['less'] ,function () {
-    gulp.src('public/modules/**/*.css')
+gulp.task('cssmin', function () {
+    gulp.src('public/dist/style/*.css')
         .pipe(cssmin())
-        .pipe(rename({suffix: '.min'}))
+        .pipe(concat('app.min.css'))
         .pipe(gulp.dest('public/dist/style'));
 });
 
