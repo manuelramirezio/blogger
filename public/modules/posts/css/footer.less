@@ -1,0 +1,61 @@
+
+
+
+.container-fluid.container-footer {
+	border-top: 1px solid #8a8a8a;
+	background-color: #000000;
+	color: #FFFFFF;
+	font-family: Georgian;
+	padding: 25px !important;
+	li {
+		a {
+			color: white;
+			font-size: 17px;
+			&:hover {
+				color: @hoverCol;
+			};
+		}
+	}
+	.mail-news {
+		h1,h2,h3,h4,h5,h6 {
+			color: #FFFFFF;
+		}
+		label {
+			font-size: 17px;
+		}
+	}
+	.creator {
+		font-family: sylfaen;
+	}
+	i {
+		a {
+			color: @linkColor;
+		}
+	}
+	.fa {
+		color: @linkColor;
+	}
+}
+
+.active {
+	a {
+		color: @activeNav !important;
+	}
+}
+#flag:after {
+	background: rgb(242, 244, 246);
+	content: "";
+	color: red;
+	position: absolute;
+	left: -132px;
+	bottom: 252px;
+	width: 0;
+	height: 0;
+	border-bottom: 55px solid #000000;
+	border-left: 722 solid rgba(18, 17, 17, 0);
+	border-right: 722px solid transparent;
+}
+
+@hoverCol  : #0b9c8f!important;
+@activeNav:  #FF8C00;
+@linkColor: #0B9C8F;

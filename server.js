@@ -6,8 +6,10 @@ var express	       = require('express'),
 	mongoose       = require('mongoose')
 
 
+var configuration = config.configuration;
+
 // db connection
-var db = mongoose.connect(config.db.uri, config.db.options, function(err) {
+var db = mongoose.connect(configuration.db.uri, configuration.db.options, function(err) {
 	if (err) {
 		console.error('Could not connect to MongoDB!');
 	}

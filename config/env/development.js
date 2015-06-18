@@ -13,7 +13,7 @@ module.exports = {
 		PORT:'5000'
 	},
 	email: {
-		user: 'kakhidze2012@gmail.com',
-		pass: 'natluli1'
+		user: 'zestanews@gmail.com',
+		pass: 'laduna1@'
 	}
 }
