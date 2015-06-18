@@ -9,7 +9,7 @@ exports.get = function(req , res) {
 	
 	var id  = req.params.id;
 
-	Post.findOne({ _id : id }).exec(function(err,data) {
+	Post.findOne({ _id : id }).exec(function(err, data) {
 		if(err) {
 			res.status(500);
 		}

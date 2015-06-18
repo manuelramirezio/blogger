@@ -20,6 +20,7 @@ var allowCrossDomain = function(req, res, next) {
 
     next();
 }
+var configuration = config.configuration;
 
 module.exports = function(db) {
 	// Initialize express app
@@ -27,11 +28,11 @@ module.exports = function(db) {
 	// Showing stack errors
 	app.set('showStackError', true);
 
-	// include  schema models
-	require('../server/models/post.server.model');
+	// include schema models
+	config.requireFiles('server/models', '../server/models/');
 
 	// Set swig as the template engine
-	app.set('PORT' , (process.env.PORT || config.server.PORT))
+	app.set('PORT' , (process.env.PORT || configuration.server.PORT))
 		// Set swig as the template engine
 		.engine('html', consolidate.swig)
 		// Set views path and view engine
@@ -64,34 +65,31 @@ module.exports = function(db) {
 
 
 	// include routes
-	require('../server/routes/post.server.route')(app);
-	require('../server/routes/category.server.route')(app);
-	require('../server/routes/reading.server.route')(app);
-	
+	config.requireFiles('server/routes', '../server/routes/');
 	// include routing files
 	// config.getGlobbedFiles('../server/routes/**/*.js').forEach(function(routePath) {
 	// 	require(path.resolve(routePath))(app);
 	// });
 	app.use(function(req , res) {
 		res.sendfile('public/main.html');
-	})
+	});
+
 	// Assume 'not found' in the error msgs is a 404. this is somewhat silly, but valid, you can do whatever you like, set properties, use instanceof etc.
-	// app.use(function(err, req, res, next) {
-	// 	// If the error object doesn't exists
-	// 	if (!err) return next();
+	app.use(function(err, req, res, next) {
+		// If the error object doesn't exists
+		if (!err) return next();
 
-	// 	// Log it
-	// 	console.error(err.stack);
-
-	// 	// Error page
-	// 	res.status(500).render('500', {
-	// 		error: err.stack
-	// 	});
-	// });
+		// Log it
+		console.error(err.stack);
+		// Error page
+		res.status(500).render('500.server.view.html', {
+			error: err.stack
+		});
+	});
 
 	// // Assume 404 since no middleware responded
 	app.use(function(req, res) {
-		res.status(404).render('404', {
+		res.status(404).render('404.server.view.html', {
 			url: req.originalUrl,
 			error: 'Not Found'
 		});
