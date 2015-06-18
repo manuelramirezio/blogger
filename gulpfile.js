@@ -121,4 +121,4 @@ gulp.task('default', ['browser-sync'], function () {
   gulp.watch(['config/**/**.*', 'server/**/**.*', 'server.js']    , ['nodemon' , reload]);
   gulp.watch(['public/*.html', 'public/modules/**/*.html']).on('change', reload);
 
-}); 
+});
