@@ -1,0 +1,16 @@
+
+
+@font-face {
+	font-family: geobold;
+	src: url('./geo_acadnusx_bold.ttf');
+}
+
+@font-face {
+	font-family: acad;
+	src: url('./geo_g&g_grigolia.ttf');
+}
+
+@font-face {
+	font-family: geo;
+	src: url('./avaza.ttf');
+}

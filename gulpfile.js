@@ -87,12 +87,14 @@ gulp.task('angular', function () {
 });
 
 //less converter
-gulp.task('less',function(){
+gulp.task('less', function(){
 	return gulp.src('public/modules/**/*.less')
         .pipe(less())
         .pipe(rename(function(filepath) {
           filepath.dirname = "";
         }))
+        .pipe(cssmin())
+        .pipe(concat('app.min.css'))
         .pipe(gulp.dest('public/dist/style'))
         .pipe(reload({ stream:true }));
 });

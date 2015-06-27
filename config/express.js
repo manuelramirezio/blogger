@@ -11,16 +11,8 @@ var express        = require('express'),
 	path           = require('path'),
 	consolidate    = require('consolidate'),
 	swig 		   = require('swig'),
-	router	       = express.Router
-
-var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-
-    next();
-}
-var configuration = config.configuration;
+	router	       = express.Router,
+	configuration  = config.configuration;
 
 module.exports = function(db) {
 	// Initialize express app
@@ -43,9 +35,7 @@ module.exports = function(db) {
 		.use(bodyParser.json()) //body parsing middleware should be above methodOverride
 		.use(cookieParser())    // CookieParser should be above session
 		.use(methodOverride())
-		// .use(stylus.middleware('./public'))
 		.use(express.static('./public'))
-		.use(allowCrossDomain)
 	
 
 	// Environment dependent middleware
@@ -63,13 +53,9 @@ module.exports = function(db) {
 	// connect flash for flash messages
 	// app.use(flash());
 
-
-	// include routes
-	config.requireFiles('server/routes', '../server/routes/');
 	// include routing files
-	// config.getGlobbedFiles('../server/routes/**/*.js').forEach(function(routePath) {
-	// 	require(path.resolve(routePath))(app);
-	// });
+	config.requireFiles('server/routes', '../server/routes/');
+
 	app.use(function(req , res) {
 		res.sendfile('public/main.html');
 	});
