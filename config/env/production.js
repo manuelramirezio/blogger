@@ -3,7 +3,7 @@
 
 module.exports = {
 	db: {
-			uri: 'mongodb://laduna:laduna@ds047911.mongolab.com:47911/blogger' ,
+			uri: 'mongodb://zesta:zesta@ds031741.mongolab.com:31741/imernews' ,
 			options: {
 				user: '',
 				pass: ''
