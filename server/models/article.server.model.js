@@ -14,13 +14,3 @@ var postSchema = new Schema({
 });
 
 mongoose.model('Post' , postSchema);
-
-// {
-// 	title : 'es aris Cemi posti marto xalxis Sesaxeb',
-// 	image : '/img/slider/3.png',
-// 	category : ['society'],
-// 	body     : 'tanSi rame unda Cavwero xalxis Sesaxeb mara ver vifiqreb to da ra vqna',
-// 	author	 : 'iuri Dolgaruki',
-// 	mainPost : false,
-// 	created  : new Date()
-// }

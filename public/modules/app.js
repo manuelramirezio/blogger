@@ -28,8 +28,7 @@ angular.module('MyApp' , ['ui.router', 'ngResource', 'ui.bootstrap'])
 				url 		: '/admin',
 				views: {
 						'header' : { templateUrl: '/modules/admin/views/header.client.view.html' },
-						'content': { templateUrl: '/modules/admin/views/content.client.view.html' },
-						'footer' : { templateUrl: '/modules/admin/views/footer.client.view.html' }
+						'content': { templateUrl: '/modules/admin/views/content.client.view.html' }						
 				}
 			})
 			.state('admin.articles', {
