@@ -11,8 +11,7 @@
 			<div class="form-group col-md-6">
 				<label for="image" class="control-label">mTavari suraTi: </label>
 				<div>
-					<input type="filepicker" class="en" data-fp-apikey="AY6Rbs341RomMZqL0CtjIz"
-					onchange="alert(event.fpfile.url)">
+					<input type="file" class="form-control en" name="image">
 				</div>
 			</div>
 			<div class="form-group col-md-6">
@@ -26,11 +25,42 @@
 					</select>
 				</div>
 			</div>
-			<div class="form-group col-md-12">
+			<div class="form-group col-md-12" ng-controller="articleCtrl">
 				<label for="body" class="control-label">teqsti:</label>
-				
-				<div>
-					<textarea class="form-control" rows="14" name="body"></textarea>
+				<div class="panel panel-default">
+					<div class="panel-heading en">
+						<span class="dropdown" dropdown on-toggle="toggled(open)">
+							<button class="dropdown-toggle btn btn-default" dropdown-toggle>
+								Text Style
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li ng-click="append('<p>Normal Text</p>')"><a href="#">Normal Text</a></li>
+								<li class="divider"></li>
+								<li ng-click="append('<h1>Heading1</h1>')"><a href="#">Heading 1</a></li>
+								<li ng-click="append('<h2>Heading2</h2>')"><a href="#">Heading 2</a></li>
+								<li ng-click="append('<h3>Heading3</h3>')"><a href="#">Heading 3</a></li>
+								<li ng-click="append('<h4>Heading4</h4>')"><a href="#">Heading 4</a></li>
+								<li ng-click="append('<h5>Heading5</h5>')"><a href="#">Heading 5</a></li>
+							</ul>
+						</span>
+						<div class="btn-group" role="group" aria-label="butonebi">
+							<button type="button" class="btn btn-default" ng-click="append('<b>bold text</b>')">
+								<span><b>B</b></span>
+							</button>
+							<button type="button" class="btn btn-default" ng-click="append('<i>italic text</i>')">
+								<span><i>I</i></span>
+							</button>
+							<button type="button" class="btn btn-default" ng-click="append('<u>underscore text</u>')">
+								<span><u>Underline</u></span>
+							</button>
+						</div>
+					</div>
+					<div class="panel-body en">
+						<textarea class="form-control" rows="14" name="body" ng-model="article_body" my-text></textarea>
+					</div>
+				</div>
+				<div class="well live-preview en" ng-bind-html="article_body">
 				</div>
 			</div>
 			<div class="form-group col-md-6">

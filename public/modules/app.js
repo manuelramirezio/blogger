@@ -6,9 +6,10 @@ var angular = require('angular');
 require('angular-ui-router');
 require('angular-resource');
 require('angular-bootstrap');
+require('angular-sanitize');
 
 
-angular.module('MyApp' , ['ui.router', 'ngResource', 'ui.bootstrap'])
+angular.module('MyApp' , ['ui.router', 'ngResource', 'ui.bootstrap', 'ngSanitize'])
 	
 	.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 		
@@ -47,3 +48,6 @@ angular.module('MyApp' , ['ui.router', 'ngResource', 'ui.bootstrap'])
 require('./core/controllers/home.client.controller.js');
 
 require('./admin/controllers/admin.client.controller.js');
+require('./admin/controllers/article.client.controller.js');
+
+require('./admin/directives/article.client.directive.js');
