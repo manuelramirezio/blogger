@@ -54,7 +54,7 @@ module.exports = function(db) {
 	// app.use(flash());
 
 	// include routing files
-	config.requireFiles('server/routes', '../server/routes/');
+	config.requireFiles('server/routes', '../server/routes/', app);
 
 	app.use(function(req , res) {
 		res.sendfile('public/main.html');
@@ -68,7 +68,7 @@ module.exports = function(db) {
 		// Log it
 		console.error(err.stack);
 		// Error page
-		res.status(500).render('500.server.view.html', {
+		res.status(500).render('505.server.view.html', {
 			error: err.stack
 		});
 	});

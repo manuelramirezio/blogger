@@ -7,9 +7,10 @@ require('angular-ui-router');
 require('angular-resource');
 require('angular-bootstrap');
 require('angular-sanitize');
+require('restangular');
 
 
-angular.module('MyApp' , ['ui.router', 'ngResource', 'ui.bootstrap', 'ngSanitize'])
+angular.module('MyApp' , ['ui.router', 'ngResource', 'ui.bootstrap', 'ngSanitize', 'restangular'])
 	
 	.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 		

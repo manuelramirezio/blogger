@@ -1,91 +1,89 @@
 <section>
 	<h2 class="geo  alert alert-success" align="center">axali statia</h2>
 	<div class="geo">
-		<form class="form-horizontal" role="form" method="post" action="">
-			<div class="form-group col-md-12">
-				<label for="title" class="control-label">saTauri:</label>
-				<div>
-					<input type="text" class="form-control" name="title" placeholder="saTauri">
-				</div>
+		<div class="form-group col-md-12">
+			<label for="title" class="control-label">saTauri:</label>
+			<div>
+				<input type="text" class="form-control" name="title" placeholder="saTauri" ng-model="article.title">
 			</div>
-			<div class="form-group col-md-6">
-				<label for="image" class="control-label">mTavari suraTi: </label>
-				<div>
-					<input type="file" class="form-control en" name="image">
-				</div>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="image" class="control-label">mTavari suraTi: </label>
+			<div>
+				<input type="file" class="form-control en" name="image">
 			</div>
-			<div class="form-group col-md-6">
-				<label for="category" class="control-label">kategoria: </label>
-				<div>
-					<select class="form-control">
-						<option>ekonomika</option>
-						<option>finansebi</option>
-						<option>biznesi</option>
-						<option>sazogadoeba</option>
-					</select>
-				</div>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="category" class="control-label">kategoria: </label>
+			<div>
+				<select class="form-control" ng-model="article.category">
+					<option>ekonomika</option>
+					<option>finansebi</option>
+					<option>biznesi</option>
+					<option>sazogadoeba</option>
+				</select>
 			</div>
-			<div class="form-group col-md-12" ng-controller="articleCtrl">
-				<label for="body" class="control-label">teqsti:</label>
-				<div class="panel panel-default">
-					<div class="panel-heading en">
-						<span class="dropdown" dropdown on-toggle="toggled(open)">
-							<button class="dropdown-toggle btn btn-default" dropdown-toggle>
-								Text Style
-								<span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu">
-								<li ng-click="append('<p>Normal Text</p>')"><a href="#">Normal Text</a></li>
-								<li class="divider"></li>
-								<li ng-click="append('<h1>Heading1</h1>')"><a href="#">Heading 1</a></li>
-								<li ng-click="append('<h2>Heading2</h2>')"><a href="#">Heading 2</a></li>
-								<li ng-click="append('<h3>Heading3</h3>')"><a href="#">Heading 3</a></li>
-								<li ng-click="append('<h4>Heading4</h4>')"><a href="#">Heading 4</a></li>
-								<li ng-click="append('<h5>Heading5</h5>')"><a href="#">Heading 5</a></li>
-							</ul>
-						</span>
-						<div class="btn-group" role="group" aria-label="butonebi">
-							<button type="button" class="btn btn-default" ng-click="append('<b>bold text</b>')">
-								<span><b>B</b></span>
-							</button>
-							<button type="button" class="btn btn-default" ng-click="append('<i>italic text</i>')">
-								<span><i>I</i></span>
-							</button>
-							<button type="button" class="btn btn-default" ng-click="append('<u>underscore text</u>')">
-								<span><u>Underline</u></span>
-							</button>
-						</div>
-					</div>
-					<div class="panel-body en">
-						<textarea class="form-control" rows="14" name="body" ng-model="article_body" my-text></textarea>
+		</div>
+		<div class="form-group col-md-12">
+			<label for="body" class="control-label">teqsti:</label>
+			<div class="panel panel-default">
+				<div class="panel-heading en">
+					<span class="dropdown" dropdown on-toggle="toggled(open)">
+						<button class="dropdown-toggle btn btn-default" dropdown-toggle>
+							Text Style
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li ng-click="append('<p>Normal Text</p>')"><a href="#">Normal Text</a></li>
+							<li class="divider"></li>
+							<li ng-click="append('<h1>Heading1</h1>')"><a href="#">Heading 1</a></li>
+							<li ng-click="append('<h2>Heading2</h2>')"><a href="#">Heading 2</a></li>
+							<li ng-click="append('<h3>Heading3</h3>')"><a href="#">Heading 3</a></li>
+							<li ng-click="append('<h4>Heading4</h4>')"><a href="#">Heading 4</a></li>
+							<li ng-click="append('<h5>Heading5</h5>')"><a href="#">Heading 5</a></li>
+						</ul>
+					</span>
+					<div class="btn-group" role="group" aria-label="butonebi">
+						<button type="button" class="btn btn-default" ng-click="append('<b>bold text</b>')">
+							<span><b>B</b></span>
+						</button>
+						<button type="button" class="btn btn-default" ng-click="append('<i>italic text</i>')">
+							<span><i>I</i></span>
+						</button>
+						<button type="button" class="btn btn-default" ng-click="append('<u>underscore text</u>')">
+							<span><u>Underline</u></span>
+						</button>
 					</div>
 				</div>
-				<div class="well live-preview en" ng-bind-html="article_body">
+				<div class="panel-body en">
+					<textarea class="form-control" rows="14" name="body" ng-model="article.body" my-text></textarea>
 				</div>
 			</div>
-			<div class="form-group col-md-6">
-				<label for="date" class="control-label">TariRi: </label>
-				<div class="en">
-					<input type="date" class="form-control" name="date">
-				</div>
+			<div class="well live-preview en" ng-bind-html="article.body">
 			</div>
-			<div class="form-group col-md-6">
-				<label for="author" class="control-label">avtori: </label>
-				<div>
-					<input type="text" class="form-control" name="author">
-				</div>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="date" class="control-label">TariRi: </label>
+			<div class="en">
+				<input type="date" class="form-control" name="date" ng-model="article.date">
 			</div>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="author" class="control-label">avtori: </label>
+			<div>
+				<input type="text" class="form-control" name="author" ng-model="article.author">
+			</div>
+		</div>
 
-			<div class="form-group col-md-12">
-				<div>
-					<input id="submit" name="submit" type="submit" value="Senaxva" class="	btn btn-success pull-right">
-				</div>
+		<div class="form-group col-md-12">
+			<button id="submit" class="btn btn-success pull-right" ng-click="addArticle()">
+				Senaxva
+			</button>
+		</div>
+		<div class="form-group">
+			<div class="article-save-status">
+				<h1></h1>
 			</div>
-			<div class="form-group">
-				<div class="article-save-status">
-					
-				</div>
-			</div>
-		</form>
+		</div>
 	</div>
 </section>

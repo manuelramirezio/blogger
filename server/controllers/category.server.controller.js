@@ -3,7 +3,7 @@
 
 var mongoose = require('mongoose'),
 	Q		 = require('q'),
-	Post     = mongoose.model('Post');
+	Post     = mongoose.model('Article');
 
 
 exports.get = function(req , res) {

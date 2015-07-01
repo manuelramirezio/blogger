@@ -1,4 +1,6 @@
 <section>
 	<h2 class="geo alert alert-success" align="center">yvela statia</h2>
-
+	<div ng-repeat="article in articles" class="geo">
+		<p>{{ $index + 1 }} {{ article.title }}</p>
+	</div>
 </section>

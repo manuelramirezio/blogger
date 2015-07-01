@@ -17,7 +17,7 @@ angular.module('MyApp').directive('myText', function($rootScope) {
 					var startPos = element.selectionStart;
 					var endPos = element.selectionEnd;
 					var scrollTop = element.scrollTop;
-					scope.article_body = element.value.substring(0, startPos) + val + element.value.substring(endPos, element.value.length);
+					scope.article.body = element.value.substring(0, startPos) + val + element.value.substring(endPos, element.value.length);
 					element.focus();
 					element.selectionStart = startPos + val.length;
 					element.selectionEnd = startPos + val.length;

@@ -2,7 +2,7 @@
 
 
 var mongoose = require('mongoose'),
-	Post	 = mongoose.model('Post');
+	Post	 = mongoose.model('Article');
 
 
 exports.get = function(req , res) {

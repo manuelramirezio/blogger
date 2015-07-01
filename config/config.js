@@ -17,12 +17,16 @@ exports.configuration = {
 
 
 // for requiring routes
-exports.requireFiles = function(dirName, prefix) {
+exports.requireFiles = function(dirName, prefix, app) {
 	
 	var fileArr = fs.readdirSync(dirName);
 
 	for(var i = 0; i < fileArr.length; i++) {
-		require(prefix + fileArr[i]);
+		if(app) {
+			require(prefix + fileArr[i])(app);
+		} else {
+			require(prefix + fileArr[i]);
+		}
 	}
 
 };
