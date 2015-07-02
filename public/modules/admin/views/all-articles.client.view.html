@@ -1,6 +1,55 @@
 <section>
-	<h2 class="geo alert alert-success" align="center">yvela statia</h2>
-	<div ng-repeat="article in articles" class="geo">
-		<p>{{ $index + 1 }} {{ article.title }}</p>
+	<h3 class="geo alert alert-success" align="center">yvela statia</h3>
+	<table class="table table-hover table-responsive geo">
+		<thead>
+			<tr>
+				<th >#</th>
+				<th>saTauri</th>
+				<th>kategoria</th>
+				<th>Seqmnis dro</th>
+				<th>avtori</th>
+				<th>Sesworeba</th>
+				<th>waSla</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="article in articles">
+				<td>{{ $index + 1 }}.</td>
+				<td>{{ article.title | titleFilter }}</td>
+				<td>{{ article.category[0] }}</td>
+				<td>{{ article.created | date:'dd-MM-yyyy'}}</td>
+				<td>{{ article.author }}</td>
+				<td>
+					<button class="btn btn-primary">
+						<i class="fa fa-edit"></i>
+					</button>
+				</td>
+				<td>
+					<button class="btn btn-danger" ng-click="open()">
+						<i class="fa fa-trash-o"></i>
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<!-- delete modal -->
+	<div class="modal fade">
+		<div class="modal-header">
+			<h3 class="modal-title">I'm a modal!</h3>
+		</div>
+		<div class="modal-body">
+			<ul>
+				<li ng-repeat="item in items">
+					<a ng-click="selected.item = item">{{ item }}</a>
+				</li>
+			</ul>
+			Selected: <b>{{ selected.item }}</b>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary" ng-click="ok()">OK</button>
+			<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+		</div>
 	</div>
+	<!-- end of delete modal -->
 </section>

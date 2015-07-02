@@ -3,7 +3,7 @@
 
 module.exports = {
 	db: {
-			uri: 'mongodb://zesta:zesta@ds031741.mongolab.com:31741/imernews' ,
+			uri: process.env.DB_URI,
 			options: {
 				user: '',
 				pass: ''

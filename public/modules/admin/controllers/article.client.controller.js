@@ -14,7 +14,7 @@ angular.module('MyApp')
 			image: '',
 			category: '',
 			body: '',
-			date: '',
+			created: '',
 			author: ''
 		}
 

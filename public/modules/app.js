@@ -52,3 +52,5 @@ require('./admin/controllers/admin.client.controller.js');
 require('./admin/controllers/article.client.controller.js');
 
 require('./admin/directives/article.client.directive.js');
+
+require('./admin/filters/title.client.filter.js');
