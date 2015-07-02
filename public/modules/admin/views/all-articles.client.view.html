@@ -20,12 +20,13 @@
 				<td>{{ article.created | date:'dd-MM-yyyy'}}</td>
 				<td>{{ article.author }}</td>
 				<td>
-					<button class="btn btn-primary">
+					<a class="btn btn-primary"	ng-click="editArticle(article)"
+					ui-sref="admin.edit-article">
 						<i class="fa fa-edit"></i>
-					</button>
+					</a>
 				</td>
 				<td>
-					<button class="btn btn-danger" ng-click="open()">
+					<button class="btn btn-danger" ng-click="alert(article)">
 						<i class="fa fa-trash-o"></i>
 					</button>
 				</td>
@@ -34,22 +35,16 @@
 	</table>
 
 	<!-- delete modal -->
-	<div class="modal fade">
+	<script type="text/ng-template" id="alertModal.html">
 		<div class="modal-header">
-			<h3 class="modal-title">I'm a modal!</h3>
 		</div>
 		<div class="modal-body">
-			<ul>
-				<li ng-repeat="item in items">
-					<a ng-click="selected.item = item">{{ item }}</a>
-				</li>
-			</ul>
-			Selected: <b>{{ selected.item }}</b>
+			<h4 class="geo">namdvilad gsurT am statiis waSla?</h4>
 		</div>
-		<div class="modal-footer">
-			<button class="btn btn-primary" ng-click="ok()">OK</button>
-			<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+		<div class="modal-footer geo">
+			<button class="btn btn-danger" ng-click="ok()">waSla</button>
+			<button class="btn btn-default" ng-click="cancel()">gauqmeba</button>
 		</div>
-	</div>
+	</script>
 	<!-- end of delete modal -->
 </section>

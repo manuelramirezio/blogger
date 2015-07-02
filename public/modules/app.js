@@ -12,7 +12,7 @@ require('restangular');
 
 angular.module('MyApp' , ['ui.router', 'ngResource', 'ui.bootstrap', 'ngSanitize', 'restangular'])
 	
-	.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+	.config(function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
 		
 		$locationProvider.html5Mode(true);
 
@@ -41,8 +41,17 @@ angular.module('MyApp' , ['ui.router', 'ngResource', 'ui.bootstrap', 'ngSanitize
 				url 		: '/article/new',
 				templateUrl: '/modules/admin/views/new-article.client.view.html'
 			})
+			.state('admin.edit-article', {
+				url 		: '/article/edit',
+				templateUrl: '/modules/admin/views/new-article.client.view.html'
+			})
 
 		$urlRouterProvider.otherwise('/');
+
+		RestangularProvider.setRestangularFields({
+			id: "_id"
+		});
+
 	});
 
 // require controllers

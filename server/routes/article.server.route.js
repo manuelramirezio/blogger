@@ -9,4 +9,8 @@ module.exports = function(app) {
 	app.route('/article')
 						 .get(article.get)
 						 .post(article.post)
+	
+	app.route('/article/:id')
+						 .get(article.one)
+						 .delete(article.delete)
 };
