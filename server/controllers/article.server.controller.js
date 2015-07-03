@@ -36,6 +36,19 @@ exports.post = function(req, res) {
 	});
 }
 
+exports.put = function(req, res) {
+	var id = req.body._id;
+	delete req.body._id;
+	
+	article.update({ _id: id }, req.body, function(err, data) {
+		if(err) {
+			console.log(err);
+			return res.status(500).send(err);
+		}
+		return res.json(data);
+	});
+}
+
 exports.delete = function(req, res) {
 
 	article.remove({ _id : req.params.id }).exec(function(err, data) {

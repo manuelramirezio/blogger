@@ -12,5 +12,6 @@ module.exports = function(app) {
 	
 	app.route('/article/:id')
 						 .get(article.one)
+						 .put(article.put)
 						 .delete(article.delete)
 };

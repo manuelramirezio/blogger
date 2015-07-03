@@ -25,7 +25,7 @@
 							<a ui-sref="admin.articles">
 								<i class="fa fa-list"></i>
 								<small> yvela statia </small>
-								<span class="label label-danger small">0</span>
+								<span class="label label-danger small">{{ n }}</span>
 							</a><br>
 							<a ui-sref="admin.new-article">
 								<i class="fa fa-pencil"></i>
@@ -59,7 +59,7 @@
 			</div>
 		</div>
 		<div class="col-md-9 right-content">
-			<div class="main-content"  ng-controller="articleCtrl" ui-view>
+			<div class="main-content" ui-view>
 				<h3 class="geo">Tqven imofebiT administratoris mTavar gverdze</h3>
 			</div>
 

@@ -8,7 +8,7 @@
 				<th>kategoria</th>
 				<th>Seqmnis dro</th>
 				<th>avtori</th>
-				<th>Sesworeba</th>
+				<th>redaqtireba</th>
 				<th>waSla</th>
 			</tr>
 		</thead>
@@ -20,8 +20,8 @@
 				<td>{{ article.created | date:'dd-MM-yyyy'}}</td>
 				<td>{{ article.author }}</td>
 				<td>
-					<a class="btn btn-primary"	ng-click="editArticle(article)"
-					ui-sref="admin.edit-article">
+					<a class="btn btn-primary" 
+					ui-sref="admin.edit-article({ _id: article._id })">
 						<i class="fa fa-edit"></i>
 					</a>
 				</td>

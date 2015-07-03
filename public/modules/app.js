@@ -35,15 +35,18 @@ angular.module('MyApp' , ['ui.router', 'ngResource', 'ui.bootstrap', 'ngSanitize
 			})
 			.state('admin.articles', {
 				url 		: '/articles',
-				templateUrl: '/modules/admin/views/all-articles.client.view.html'
+				templateUrl: '/modules/admin/views/all-articles.client.view.html',
+				controller: 'allArticleCtrl'
 			})
 			.state('admin.new-article', {
 				url 		: '/article/new',
-				templateUrl: '/modules/admin/views/new-article.client.view.html'
+				templateUrl: '/modules/admin/views/new-article.client.view.html',
+				controller: 'newArticleCtrl'
 			})
 			.state('admin.edit-article', {
-				url 		: '/article/edit',
-				templateUrl: '/modules/admin/views/new-article.client.view.html'
+				url 		: '/article/edit/:_id',
+				templateUrl: '/modules/admin/views/edit-article.client.view.html',
+				controller: 'editArticleCtrl'
 			})
 
 		$urlRouterProvider.otherwise('/');
@@ -58,7 +61,10 @@ angular.module('MyApp' , ['ui.router', 'ngResource', 'ui.bootstrap', 'ngSanitize
 require('./core/controllers/home.client.controller.js');
 
 require('./admin/controllers/admin.client.controller.js');
-require('./admin/controllers/article.client.controller.js');
+require('./admin/controllers/new-article.client.controller.js');
+require('./admin/controllers/edit-article.client.controller.js');
+require('./admin/controllers/all-article.client.controller.js');
+require('./admin/controllers/modal.client.controller.js');
 
 require('./admin/directives/article.client.directive.js');
 
